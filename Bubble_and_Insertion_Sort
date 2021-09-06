@@ -1,0 +1,36 @@
+//All use ascending!!
+//全部默认从小到大排序
+//全部默认传入队列以及队列元素个数
+
+// Bubble Sort
+void Bubble_Sort (ElementType A[], int N){
+    // p是队列的最后一个元素
+    for(P=N-1; p>=0; p--){
+        // 是否做过至少一次的交换
+        flag = false;
+        //开始冒泡
+        for(i=0;i<p;i++){ // 通过每一次冒泡得到p，也就是每次冒泡都会放好最大的元素的位置 - 放到最后
+            if(A[i]> A[i+1]){
+                swap(A[i],A[i+1]);
+                flag = true;
+            }
+        }
+        if (flag == false) break;
+    }
+}
+
+
+
+// Insertion Sort
+void Insertion_Sort(ElementType A[], int N){
+    //P 开始摸牌
+    for(P=1; p<N;p++){
+        Tmp = A[p]; //摸牌, Tmp是临时存储用的变量
+        // 这个循环终止条件有点抽象
+        // 用人话就是在已有序的队列中，向左扫描，插入Tmp
+        for(i = p;i>0 && A[i-1]>Tmp; i--){ //向左扫描，用>是因为ascending
+            A[i] = A[i-1]; //移出空位
+        }
+        A[i] = Tmp; //新牌落位
+    }
+        }
