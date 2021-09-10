@@ -28,8 +28,8 @@ void Insertion_Sort(ElementType A[], int N){
         Tmp = A[p]; //摸牌, Tmp是临时存储用的变量
         // 这个循环终止条件有点抽象
         // 用人话就是在已有序的队列中，向左扫描，插入Tmp
-        // 此时的A[i] == A[p] (初始)
-        for(i = p;i>0 && A[i-1]>Tmp; i--){ //向左扫描，用>是因为ascending
+        // 此时的A[i] == A[p] (初始) 这里的i指的是要移动的那个元素下标 - tmp
+        for(i = p;i>0 && A[i-1]>Tmp; i--){ //向左扫描，用>是因为ascending 用<就是descending了
             A[i] = A[i-1]; //移出空位
         }
         A[i] = Tmp; //新牌落位
